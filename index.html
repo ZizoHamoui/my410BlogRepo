@@ -43,7 +43,10 @@
         border-bottom: 2px solid var(--color-border);
         display: flex;
         align-items: center;
+        /* UPDATED: Added space-between and right padding */
+        justify-content: space-between;
         padding-left: 5vw;
+        padding-right: 5vw;
         z-index: 1000;
       }
 
@@ -52,6 +55,21 @@
         font-weight: 700;
         letter-spacing: -0.02em;
         text-transform: uppercase;
+      }
+
+      /* NEW: Style for the Team Blog link */
+      .nav-link {
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        color: var(--color-text);
+        cursor: pointer;
+      }
+
+      .nav-link:hover {
+        text-decoration: underline;
       }
 
       .hero {
@@ -170,6 +188,7 @@
   <body>
     <nav class="nav-bar">
       <div class="nav-brand">Abdul Aziz Hamoui</div>
+      <a href="https://catchupsqaud.netlify.app/" class="nav-link">Team Blog</a>
     </nav>
 
     <main>
