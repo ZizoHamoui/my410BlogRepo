@@ -161,6 +161,21 @@
         padding: 40px 30px;
       }
 
+      /* NEW STYLES: Google Doc Embed */
+      .doc-container {
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border: 1px solid var(--color-border); /* Matches the card border */
+      }
+
+      .doc-container iframe {
+        width: 100%;
+        height: 600px; /* Tall enough to read comfortably */
+        border: none;
+        display: block;
+      }
+
       .entry-title {
         font-size: 2rem;
         font-weight: 700;
@@ -175,7 +190,6 @@
         max-width: 90%;
       }
 
-      /* Style for the new Reflection Header */
       .reflection-header {
         font-size: 1.3rem;
         font-weight: 700;
@@ -216,6 +230,11 @@
         .entry-title {
           font-size: 1.5rem;
         }
+        
+        /* Adjust iframe height for mobile if needed */
+        .doc-container iframe {
+            height: 400px;
+        }
       }
     </style>
   </head>
@@ -246,10 +265,11 @@
           <hr class="card-divider" />
 
           <div class="card-body">
-              <h2 class="entry-title">Entry 2</h2>
+              <h2 class="entry-title">Game Design Document (GDD)</h2>
               <p class="entry-text">
                 This week was all about structure and mechanics. As we moved into the Game Design Document (GDD) phase, I wanted to ensure the team wasn't just working hard, but working safely. When I set the agenda and structure, I intentionally built in a "risk factor", setting our internal deadlines a few days earlier than the actual due date. This buffer proved immediately useful; when the narrative flowboard needed last-minute adjustments, I was able to jump in and refine it without putting us behind schedule.
               </p>
+              
               <p class="entry-text">
                 On the design side, my focus was strictly on defining our "core loop" I wanted mechanics that felt distinct rather than repetitive, so I conceptualized five core pillars and fleshed them out over two pages in the GDD:
                 <br>1. <strong>Generate:</strong> Place spark towers to gather resources.
@@ -259,6 +279,13 @@
                 <br>5. <strong>Survive:</strong> Make sure the scroll is maintained after all waves are done.
                 <br>Once I established this logic, Rakko jumped in to flesh out the specific values for smart depth, which was a great collaborative workflow.
               </p>
+
+              <p class="entry-text" style="font-weight: 600; font-size: 0.9rem; margin-top: 30px;">
+                View our full GDD below:
+              </p>
+              <div class="doc-container">
+                <iframe src="https://docs.google.com/document/d/e/2PACX-1vSIoX3DBrGNme_vQeI8UkgHZVwm4AwRgaDF25bqJyG2-M1N1Ayr4OXmqHatLL9ROUIpljXssol7yw-6/pub?embedded=true"></iframe>
+              </div>
               <p class="entry-text">
                 For the presentation, I assigned slides based on ownership. By having team members present the specific parts they worked on, I noticed everyone felt much more confident and eager to speak.
               </p>
@@ -287,7 +314,7 @@
           <hr class="card-divider" />
 
           <div class="card-body">
-            <h2 class="entry-title">Entry 1</h2>
+            <h2 class="entry-title">Team Formation and Ideation</h2>
             <p class="entry-text">
               This week was an intense start to our IAT 410 project, Desk TD, as we prepared for the Greenlight Review. As Project Manager and Lead Programmer, I took the lead on our initial ideation sessions using Figjam to organize our tower-defense concepts.
             </p>
