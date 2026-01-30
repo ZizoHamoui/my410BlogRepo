@@ -43,7 +43,7 @@
         border-bottom: 2px solid var(--color-border);
         display: flex;
         align-items: center;
-        justify-content: space-between; /* Keeps logo left, button right */
+        justify-content: space-between;
         padding-left: 5vw;
         padding-right: 5vw;
         z-index: 1000;
@@ -56,7 +56,6 @@
         text-transform: uppercase;
       }
 
-      /* UPDATED: Button Styling */
       .nav-link {
         font-size: 0.85rem;
         font-weight: 600;
@@ -65,25 +64,25 @@
         text-decoration: none;
         color: var(--color-text);
         cursor: pointer;
-        
-        /* New Button Look */
-        background-color: #f2f2f2; /* Light Grey Background */
-        padding: 12px 24px;       /* Padding for button size */
-        border-radius: 50px;      /* Rounded corners */
+        background-color: #f2f2f2;
+        padding: 12px 24px;
+        border-radius: 50px;
         transition: all 0.2s ease;
       }
 
       .nav-link:hover {
-        background-color: #e0e0e0; /* Slightly darker grey on hover */
-        transform: translateY(-1px); /* Subtle lift effect */
+        background-color: #e0e0e0;
+        transform: translateY(-1px);
       }
 
       .hero {
         display: flex;
+        flex-direction: column; 
         justify-content: center;
         align-items: center;
         padding: 80px 0 60px 0;
         width: 100%;
+        gap: 25px; 
       }
 
       .hero h1 {
@@ -91,6 +90,25 @@
         font-weight: 800;
         letter-spacing: -0.05em;
         text-align: center;
+        margin: 0;
+      }
+
+      .hero-tags {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .role-tag {
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 8px 18px;
+        border: 1px solid var(--color-border);
+        border-radius: 50px;
+        background-color: transparent;
       }
 
       .blog-container {
@@ -157,6 +175,16 @@
         max-width: 90%;
       }
 
+      /* Style for the new Reflection Header */
+      .reflection-header {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-top: 40px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+      }
+
       .card-footer {
         padding: 0 30px 20px 30px;
         display: flex;
@@ -194,12 +222,18 @@
   <body>
     <nav class="nav-bar">
       <div class="nav-brand">Abdul Aziz Hamoui</div>
-      <a href="https://catchupsqaud.netlify.app/" target="_blank" class="nav-link" >Team Blog</a>
+      <a href="https://catchupsqaud.netlify.app/" target="_blank" class="nav-link">Team Blog</a>
     </nav>
 
     <main>
       <section class="hero">
         <h1>Abdul's Personal Blog</h1>
+        
+        <div class="hero-tags">
+          <span class="role-tag">Product Manager</span>
+          <span class="role-tag">UX Architect</span>
+          <span class="role-tag">Lead Unity Programmer</span>
+        </div>
       </section>
       
       <section class="blog-container">
@@ -212,12 +246,28 @@
           <hr class="card-divider" />
 
           <div class="card-body">
-              <h2 class="entry-title">Entry 2</h2>
+              <h2 class="entry-title">Entry 2: GDD & Smart Depth</h2>
               <p class="entry-text">
-                This week was all about getting our ideas down on paper, or rather, figJam board. We shifted gears to focus on the Game Design Document (GDD), and I wanted to make sure we had a solid foundation before diving into the details. I started by setting up the agenda and document structure so the rest of the team could easily jump in and add their parts without us stepping on each other's toes.
+                This week was all about structure and mechanics. As we moved into the Game Design Document (GDD) phase, I wanted to ensure the team wasn't just working hard, but working safely. When I set the agenda and structure, I intentionally built in a "risk factor"—setting our internal deadlines a few days earlier than the actual due date. This buffer proved immediately useful; when the narrative flowboard needed last-minute adjustments, I was able to jump in and refine it without putting us behind schedule.
               </p>
-              <p class="entry-text">I also spent a lot of time refining the mechanics, finalizing our narrative flowboards, and defining exactly how our gameplay loops and resolution types will function. It felt good to get those specific details locked in. To wrap things up, I built our slide deck and assigned speaking roles.</p>
-              <p class="entry-text">Now that the design is settled, I’m jumping back into Unity. Next week, I will start tackling the core mechanics; getting the tiling system and drag-and-drop towers actually working. It’s going to be a heavy coding week, but I’m excited to see how this comes along.</p>
+              <p class="entry-text">
+                On the design side, my focus was strictly on defining our "Smart Depth." I wanted mechanics that felt distinct rather than repetitive, so I conceptualized three core pillars:
+                <br>1. <strong>Mug Blocks:</strong> Creating environmental pressure.
+                <br>2. <strong>Freeze Status:</strong> A capability boost for the player.
+                <br>3. <strong>Tower Upgrades:</strong> Providing strategic choice.
+                <br>Once I established this logic, Rakko jumped in to flesh out the specific values, which was a great collaborative workflow.
+              </p>
+              <p class="entry-text">
+                For the presentation, I assigned slides based on ownership. By having team members present the specific parts they worked on, I noticed everyone felt much more confident and eager to speak.
+              </p>
+
+              <h3 class="reflection-header">Reflection</h3>
+              <p class="entry-text">
+                Looking ahead, I am shifting back from "Manager" mode to "Developer" mode. I'll admit, I'm feeling a little nervous about the technical workload. It’s been a while since I was in a flow state with Unity, so I’ve blocked out two full days this weekend to just code and resolve that rust.
+              </p>
+              <p class="entry-text">
+                Team-wise, the energy is great—everyone has really absorbed the vision and is excited. The only hurdle right now is communication; occasionally the language barrier creates small friction points, but given the team's attitude, I know this is something we can easily overcome.
+              </p>
           </div>
           <div class="card-footer">
             <span class="timestamp">Posted 09:12 PM</span>
