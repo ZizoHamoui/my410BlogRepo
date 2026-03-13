@@ -1,26 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abdul Hamoui | Personal Blog</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav class="nav-bar">
       <div class="nav-brand">Abdul Aziz Hamoui</div>
-      <a href="https://catchupsqaud.netlify.app/" target="_blank" class="nav-link">Team Blog</a>
+      <a
+        href="https://catchupsqaud.netlify.app/"
+        target="_blank"
+        class="nav-link"
+        >Team Blog</a
+      >
     </nav>
 
     <main>
       <section class="hero">
         <h1>Desk TD Game Design Blog</h1>
-        
+
         <div class="hero-tags">
           <span class="role-tag">Product Manager</span>
           <span class="role-tag">UX Architect</span>
           <span class="role-tag">Lead Unity Programmer</span>
         </div>
+      </section>
+
+      <section class="blog-container">
+        <article class="blog-card">
+          <div class="card-header">
+            <span class="week-label">Week 09</span>
+            <span class="date-label">Mar 12, 2026</span>
+          </div>
+
+          <hr class="card-divider" />
+
+          <div class="card-body">
+            <h2 class="entry-title">Milestone 4: Alpha Prototype</h2>
+            <img
+              src="Alpha.png"
+              alt="Alpha milestone gameplay screenshot"
+              class="entry-image"
+            />
+            <p class="entry-text">
+              This week was the culmination of everything we've been building
+              toward. For the Alpha milestone, I designed and implemented the
+              full 3-wave progression for Level 2, each wave escalating in enemy
+              count and spawn speed. Building the game state machine (Idle →
+              Spawning → In Progress → Complete → Victory/Game Over) was a
+              satisfying puzzle; I wanted each transition to feel deliberate and
+              dramatic, so I wove narrative beats into key moments like the
+              first time the scroll takes damage and the start of the final
+              wave.
+            </p>
+            <p class="entry-text">
+              The bulk of my programming effort went into fleshing out the enemy
+              and tower systems. Enemies now operate on their own attack state
+              machine with a lunge animation and hit flash for visual feedback.
+              I'm especially proud of the ink shield mechanic, where enemies
+              gain a temporary shield when they pass over ink trails left by
+              other enemies. It adds a layer of strategy that rewards players
+              for cleaning tiles proactively rather than just placing towers.
+            </p>
+            <p class="entry-text">
+              On the tower side, I refined the drag-to-grid placement with range
+              visualization, so players can see exactly which tiles a Pencil or
+              Compass will cover before committing their sparks. The Compass
+              tower's arc projectile with splash damage was tricky to get right,
+              but the parabolic flight path feels great in action. I also
+              introduced the Eraser as a consumable tower that cleans ink and
+              self-destructs, giving players a tactical option for reclaiming
+              blocked tiles.
+            </p>
+            <p class="entry-text">
+              To tie everything together, I built out the narrative and UI
+              layer: story popups that freeze gameplay at key moments,
+              progressive scroll damage sprites so players can visually gauge
+              their health, and a kill quip system with unique lines per tower
+              type. Small touches like the StickyNote's defensive quips after
+              taking hits add personality to an otherwise mechanical experience.
+            </p>
+
+            <h3 class="reflection-header">Playtesting & Reflection</h3>
+            <p class="entry-text">
+              I partnered with Kate again for playtesting and we validated the
+              difficulty curve, tower balance, and enemy pacing across all three
+              waves. I also captured and narrated gameplay footage for our alpha
+              demo presentation. Looking ahead, I want to continue tuning the
+              spark economy and explore additional level designs that push the
+              ink mechanic further.
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <span class="timestamp">Posted 10:30 PM</span>
+          </div>
+        </article>
       </section>
 
       <section class="blog-container">
@@ -35,18 +112,35 @@
           <div class="card-body">
             <h2 class="entry-title">Milestone 3: First Playable</h2>
             <p class="entry-text">
-              This week marked the transition from theory to reality as we delivered our First Playable prototype. As the Lead Unity Programmer, I had to ensure our "paper" mechanics felt good in the engine. I focused heavily on polishing the core technical requirements, specifically implementing the wave timing logic, spark resource generation, and enemy pathfinding/movement.
+              This week marked the transition from theory to reality as we
+              delivered our First Playable prototype. As the Lead Unity
+              Programmer, I had to ensure our "paper" mechanics felt good in the
+              engine. I focused heavily on polishing the core technical
+              requirements, specifically implementing the wave timing logic,
+              spark resource generation, and enemy pathfinding/movement.
             </p>
             <p class="entry-text">
-              To increase engagement early on, I also put on my audio engineer hat. I created and integrated custom sound effects and background music, which immediately made the prototype feel more alive during our demos.
+              To increase engagement early on, I also put on my audio engineer
+              hat. I created and integrated custom sound effects and background
+              music, which immediately made the prototype feel more alive during
+              our demos.
             </p>
             <p class="entry-text">
-              On the UX side, I wanted to validate our assumptions quickly. I organized a FigJam board with five targeted design test questions and co-led playtesting sessions with Kate. We observed play patterns and recorded the results in a shared document. This data was crucial, it helped us identify gaps in our mechanics, which Janis then synthesized into our revised GDD.
+              On the UX side, I wanted to validate our assumptions quickly. I
+              organized a FigJam board with five targeted design test questions
+              and co-led playtesting sessions with Kate. We observed play
+              patterns and recorded the results in a shared document. This data
+              was crucial, it helped us identify gaps in our mechanics, which
+              Janis then synthesized into our revised GDD.
             </p>
 
             <h3 class="reflection-header">Looking Ahead</h3>
             <p class="entry-text">
-              With the core loop functional, my next step is balancing. I plan to focus on adjusting unit pricing and refining the level design to ensure the difficulty curve is challenging but fair. I also want to improve the visual cues for stats and instructions to reduce player confusion.
+              With the core loop functional, my next step is balancing. I plan
+              to focus on adjusting unit pricing and refining the level design
+              to ensure the difficulty curve is challenging but fair. I also
+              want to improve the visual cues for stats and instructions to
+              reduce player confusion.
             </p>
           </div>
 
@@ -55,7 +149,7 @@
           </div>
         </article>
       </section>
-      
+
       <section class="blog-container">
         <article class="blog-card">
           <div class="card-header">
@@ -66,45 +160,73 @@
           <hr class="card-divider" />
 
           <div class="card-body">
-              <h2 class="entry-title">Game Design Document (GDD)</h2>
-              <p class="entry-text">
-                This week was all about structure and mechanics. As we moved into the Game Design Document (GDD) phase, I wanted to ensure the team wasn't just working hard, but working safely. When I set the agenda and structure, I intentionally built in a "risk factor", setting our internal deadlines a few days earlier than the actual due date. This buffer proved immediately useful; when the narrative flowboard needed last-minute adjustments, I was able to jump in and refine it without putting us behind schedule.
-              </p>
-              
-              <p class="entry-text">
-                On the design side, my focus was strictly on defining our "core loop" I wanted mechanics that felt distinct rather than repetitive, so I conceptualized five core pillars and fleshed them out over two pages in the GDD:
-                <br>1. <strong>Generate:</strong> Place spark towers to gather resources.
-                <br>2. <strong>Deploy:</strong> Deploy stationary towers on tiles.
-                <br>3. <strong>Defend:</strong> Defend the scroll from the attacking monsters.
-                <br>4. <strong>Clean:</strong> Clean up the ink they left behind.
-                <br>5. <strong>Survive:</strong> Make sure the scroll is maintained after all waves are done.
-                <br>Once I established this logic, Rakko jumped in to flesh out the specific values for smart depth, which was a great collaborative workflow.
-              </p>
+            <h2 class="entry-title">Game Design Document (GDD)</h2>
+            <p class="entry-text">
+              This week was all about structure and mechanics. As we moved into
+              the Game Design Document (GDD) phase, I wanted to ensure the team
+              wasn't just working hard, but working safely. When I set the
+              agenda and structure, I intentionally built in a "risk factor",
+              setting our internal deadlines a few days earlier than the actual
+              due date. This buffer proved immediately useful; when the
+              narrative flowboard needed last-minute adjustments, I was able to
+              jump in and refine it without putting us behind schedule.
+            </p>
 
-              <p class="entry-text" style="font-weight: 600; font-size: 0.9rem; margin-top: 30px;">
-                View our full GDD below:
-              </p>
-              <div class="doc-container">
-                <iframe src="https://docs.google.com/document/d/e/2PACX-1vSIoX3DBrGNme_vQeI8UkgHZVwm4AwRgaDF25bqJyG2-M1N1Ayr4OXmqHatLL9ROUIpljXssol7yw-6/pub?embedded=true"></iframe>
-              </div>
-              <p class="entry-text">
-                For the presentation, I assigned slides based on ownership. By having team members present the specific parts they worked on, I noticed everyone felt much more confident and eager to speak.
-              </p>
+            <p class="entry-text">
+              On the design side, my focus was strictly on defining our "core
+              loop" I wanted mechanics that felt distinct rather than
+              repetitive, so I conceptualized five core pillars and fleshed them
+              out over two pages in the GDD:
+              <br />1. <strong>Generate:</strong> Place spark towers to gather
+              resources. <br />2. <strong>Deploy:</strong> Deploy stationary
+              towers on tiles. <br />3. <strong>Defend:</strong> Defend the
+              scroll from the attacking monsters. <br />4.
+              <strong>Clean:</strong> Clean up the ink they left behind.
+              <br />5. <strong>Survive:</strong> Make sure the scroll is
+              maintained after all waves are done. <br />Once I established this
+              logic, Rakko jumped in to flesh out the specific values for smart
+              depth, which was a great collaborative workflow.
+            </p>
 
-              <h3 class="reflection-header">Reflection</h3>
-              <p class="entry-text">
-                Looking ahead, I am shifting back from "Manager" mode to "Developer" mode. I'll admit, I'm feeling a little nervous about the technical workload. It’s been a while since I was in a flow state with Unity, so I’ve blocked out two full days this weekend to just code and resolve that rust.
-              </p>
-              <p class="entry-text">
-                Team-wise, the energy is great—everyone has really absorbed the vision and is excited. The only hurdle right now is communication; occasionally the language barrier creates small friction points, but given the team's attitude, I know this is something we can easily overcome.
-              </p>
+            <p
+              class="entry-text"
+              style="font-weight: 600; font-size: 0.9rem; margin-top: 30px"
+            >
+              View our full GDD below:
+            </p>
+            <div class="doc-container">
+              <iframe
+                src="https://docs.google.com/document/d/e/2PACX-1vSIoX3DBrGNme_vQeI8UkgHZVwm4AwRgaDF25bqJyG2-M1N1Ayr4OXmqHatLL9ROUIpljXssol7yw-6/pub?embedded=true"
+              ></iframe>
+            </div>
+            <p class="entry-text">
+              For the presentation, I assigned slides based on ownership. By
+              having team members present the specific parts they worked on, I
+              noticed everyone felt much more confident and eager to speak.
+            </p>
+
+            <h3 class="reflection-header">Reflection</h3>
+            <p class="entry-text">
+              Looking ahead, I am shifting back from "Manager" mode to
+              "Developer" mode. I'll admit, I'm feeling a little nervous about
+              the technical workload. It’s been a while since I was in a flow
+              state with Unity, so I’ve blocked out two full days this weekend
+              to just code and resolve that rust.
+            </p>
+            <p class="entry-text">
+              Team-wise, the energy is great—everyone has really absorbed the
+              vision and is excited. The only hurdle right now is communication;
+              occasionally the language barrier creates small friction points,
+              but given the team's attitude, I know this is something we can
+              easily overcome.
+            </p>
           </div>
           <div class="card-footer">
             <span class="timestamp">Posted 09:12 PM</span>
           </div>
         </article>
       </section>
-          
+
       <section class="blog-container">
         <article class="blog-card">
           <div class="card-header">
@@ -117,11 +239,33 @@
           <div class="card-body">
             <h2 class="entry-title">Team Formation and Ideation</h2>
             <p class="entry-text">
-              This week was an intense start to our IAT 410 project, Desk TD, as we prepared for the Greenlight Review. As Project Manager and Lead Programmer, I took the lead on our initial ideation sessions using Figjam to organize our tower-defense concepts.
+              This week was an intense start to our IAT 410 project, Desk TD, as
+              we prepared for the Greenlight Review. As Project Manager and Lead
+              Programmer, I took the lead on our initial ideation sessions using
+              Figjam to organize our tower-defense concepts.
             </p>
-            <p class="entry-text">My primary contribution was drafting our idea for the game proposal and tightening it on FigJam. I spent significant time defining our core mechanics, such as the "Inked Tile" splat system and the "Spark" economy, to ensure our design was both technically feasible. To help my team visualize the project, I created a detailed storyboard on Figjam, which served as a reference for Janis while she designed our stationery characters and refined stroyboards.</p>
-            <p class="entry-text">On the management side, I coordinated task distribution and handled the final submission of our documentation. Unfortunately, a sudden bout of food poisoning prevented me from attending the in-person presentation. I had to quickly pivot, delegating my slides on "Mechanics and Justification" to Rakko and Kate to ensure the team was supported during the pitch.</p>
-            <p class="entry-text">Looking ahead, I am beginning to set up our Unity environment for us to be able to start working from the next week.</p>
+            <p class="entry-text">
+              My primary contribution was drafting our idea for the game
+              proposal and tightening it on FigJam. I spent significant time
+              defining our core mechanics, such as the "Inked Tile" splat system
+              and the "Spark" economy, to ensure our design was both technically
+              feasible. To help my team visualize the project, I created a
+              detailed storyboard on Figjam, which served as a reference for
+              Janis while she designed our stationery characters and refined
+              stroyboards.
+            </p>
+            <p class="entry-text">
+              On the management side, I coordinated task distribution and
+              handled the final submission of our documentation. Unfortunately,
+              a sudden bout of food poisoning prevented me from attending the
+              in-person presentation. I had to quickly pivot, delegating my
+              slides on "Mechanics and Justification" to Rakko and Kate to
+              ensure the team was supported during the pitch.
+            </p>
+            <p class="entry-text">
+              Looking ahead, I am beginning to set up our Unity environment for
+              us to be able to start working from the next week.
+            </p>
           </div>
 
           <div class="card-footer">
