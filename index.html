@@ -31,6 +31,98 @@
       <section class="blog-container">
         <article class="blog-card">
           <div class="card-header">
+            <span class="week-label">Week 11</span>
+            <span class="date-label">Mar 26, 2026</span>
+          </div>
+
+          <hr class="card-divider" />
+
+          <div class="card-body">
+            <h2 class="entry-title">Milestone 5: Beta</h2>
+            <p class="entry-text">
+              Beta pushed me into territory I hadn't fully occupied before:
+              building content end to end, not just systems. For Alpha, most of
+              my work lived inside scripts and state machines. For Beta, I had to
+              sit with each level, play through it myself, and ask whether it
+              actually felt like a game worth finishing. That shift in mindset
+              shaped everything I shipped this milestone.
+            </p>
+            <p class="entry-text">
+              My biggest programming effort was designing and implementing the
+              Freeze enemy. The concept is straightforward on paper—an enemy that
+              cyclically locks one of your towers while it's alive—but making it
+              feel fair while still creating real tension took several iterations.
+              I wrote <code>FreezeAbility.cs</code> as a coroutine-driven cycle:
+              the enemy picks a target tower, swaps its sprite to a frozen visual,
+              holds it for a configurable duration, then moves on to a fresh
+              target after a brief gap. I also made sure that on enemy death, all
+              frozen towers restore immediately, so the player never gets punished
+              for a kill that came a frame too late. Alongside this, I created the
+              full set of frozen tower sprites for Pencil, SparkTower, and Compass,
+              so the visual state communicates the mechanic without any UI text.
+            </p>
+            <p class="entry-text">
+              Level 1 and Level 2 are now fully built end to end. For Level 1, I
+              implemented the complete tutorial system through
+              <code>TutorialManager.cs</code>—contextual prompts that walk the
+              player through placement and resource management without breaking
+              the fiction of the world. Level 2 got the Freeze enemy integrated
+              into its wave configuration alongside the tuned wave timing from
+              Alpha. To give each level its own narrative voice, I wrote
+              <code>LevelNarrativeManager.cs</code>, a lightweight component that
+              lets me configure per-level story beats—level start, wave start,
+              wave end—directly in the Unity Inspector without touching the
+              WaveManager. It made iterating on the narrative flow much faster
+              and keeps the systems cleanly separated.
+            </p>
+            <p class="entry-text">
+              On the visual side, I reworked the Pencil tower's shoot animation
+              from a simple two-frame flash into a full seven-frame sequence. The
+              new <code>PencilAnimation.cs</code> cycles through all seven sprites
+              at a configurable frame rate and fires the projectile exactly on
+              frame four, so the shot always lands at the visual peak of the
+              wind-up. This was one of those small changes that had a
+              disproportionately large impact on how the Pencil feels to watch.
+              I also fixed menu UI positioning that had drifted out of alignment
+              and patched a handful of bugs across the level scenes and enemy
+              prefabs surfaced during our internal playtesting.
+            </p>
+
+            <h3 class="reflection-header">Playtesting & Reflection</h3>
+            <p class="entry-text">
+              Kate and Janis ran playtesting sessions this milestone and the
+              feedback confirmed what I suspected: the jump between Level 1 and
+              Level 2 is still steeper than it should be. The Freeze enemy is
+              doing its job creating pressure, but players haven't been given
+              enough time in Level 1 to internalize the core loop before that
+              pressure lands. That learning curve gap is the first thing I want
+              to address going into Golden Code. I also recorded and narrated the
+              beta demo video and wrote the Part 6 update for our Game Design
+              Document, covering the new mechanics and the direction for Level 3.
+            </p>
+
+            <h3 class="reflection-header">Looking Ahead</h3>
+            <p class="entry-text">
+              For Golden Code, my focus is Level 3 content and overall balance
+              refinement. I want to make the difficulty ramp between Level 1 and
+              2 more gradual, and I'm exploring what a meaningful elite enemy
+              type would look like—something with its own FSM logic that rewards
+              players who have actually learned the system rather than just
+              surviving it. The Freeze enemy proved that a well-designed mechanic
+              can change how players think about tower placement, and I want Level
+              3 to build on that deliberately.
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <span class="timestamp">Posted 11:45 PM</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="blog-container">
+        <article class="blog-card">
+          <div class="card-header">
             <span class="week-label">Week 09</span>
             <span class="date-label">Mar 12, 2026</span>
           </div>
