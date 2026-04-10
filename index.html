@@ -31,6 +31,111 @@
       <section class="blog-container">
         <article class="blog-card">
           <div class="card-header">
+            <span class="week-label">Week 14</span>
+            <span class="date-label">Apr 9, 2026</span>
+          </div>
+
+          <hr class="card-divider" />
+
+          <div class="card-body">
+            <h2 class="entry-title">
+              Final Milestone: Golden Build & Showcase
+            </h2>
+
+            <p class="entry-text">
+              As we approached the final stage of the project I concentrated on
+              polishing the visual and technical areas that had the most impact
+              on playability and presentation. Level 3 was finalized by adding
+              the King boss encounter, implemented a lightweight behavior-tree
+              framework for richer enemy AI, shipped UI and audio polish, and
+              tuned gameplay balance to improve pacing and clarity.
+            </p>
+
+            <h3 class="reflection-header">Final Weeks Highlights</h3>
+            <p class="entry-text">
+              <strong>King / Boss &amp; AI:</strong> I added the King boss
+              prefab and iterated on its power and telegraphs. To support more
+              interesting behavior a behavior-tree system was implemented
+              (<code>BTNode.cs</code>, <code>BTAction.cs</code>,
+              <code>BTCondition.cs</code>) and authored controller/animation
+              scripts for the ink-brute (<code>InkBruteController.cs</code>,
+              <code>InkBruteAnimation.cs</code>). The boss was also added into
+              <code>WaveManager.cs</code> so Level 3 now includes the intended
+              boss wave.
+            </p>
+
+            <p class="entry-text">
+              <strong>UI, Ending Scenes &amp; Audio:</strong> I added branching
+              ending scenes and assembled win/lose audio files, improved the
+              game-over and upgrade overlays, and fixed several flash/panel bugs
+              surfaced during playtesting. These changes touched
+              <code>GameOverlay.cs</code>, <code>ScreenFlash.cs</code>, and
+              <code>UpgradeConfirmationUI.cs</code> and included new UI sprites
+              for modal and level-complete states.
+            </p>
+
+            <p class="entry-text">
+              <strong>Balance &amp; Gameplay Feel:</strong> Spark was tuned
+              generation in <code>SparkManager.cs</code> to smooth resource
+              pacing and applied speed/balance fixes to
+              <code>Enemy.cs</code> and <code>WaveManager.cs</code> that make
+              encounters feel tighter and more readable.
+            </p>
+
+            <p class="entry-text">
+              <strong>Assets &amp; Housekeeping:</strong> Spark was tuned
+              generation in <code>SparkManager.cs</code> to smooth resource
+              pacing and applied speed/balance fixes to
+              <code>Enemy.cs</code> and <code>WaveManager.cs</code> that make
+              encounters feel tighter and more readable.
+            </p>
+
+            <div class="doc-container">
+              <iframe
+                src="https://www.youtube.com/embed/p1Py1tCUMkU"
+                title="Desk TD Trailer"
+                frameborder="0"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+                style="
+                  width: 100%;
+                  aspect-ratio: 16/9;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                "
+              ></iframe>
+            </div>
+
+            <h3 class="reflection-header">Reflection & Next Steps</h3>
+            <p class="entry-text">
+              Presenting the Golden Build at the showcase validated the
+              direction and polish I pushed in these final weeks. Next I will
+              continue tuning wave pacing, improve boss telegraphs so encounters
+              feel fair and readable, and refine onboarding so players reliably
+              learn the core loop. I want to thank the team for their efforts
+              throughout the term: Kate's UI and HUD polish, Janis's artwork and
+              trailer, and Rakko's WebGL deployment and walkthrough recording
+              were critical to getting the project showcase-ready.
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <span class="timestamp">Posted 11:32 PM</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="blog-container">
+        <article class="blog-card">
+          <div class="card-header">
             <span class="week-label">Week 11</span>
             <span class="date-label">Mar 26, 2026</span>
           </div>
@@ -42,24 +147,25 @@
             <p class="entry-text">
               Beta pushed me into territory I hadn't fully occupied before:
               building content end to end, not just systems. For Alpha, most of
-              my work lived inside scripts and state machines. For Beta, I had to
-              sit with each level, play through it myself, and ask whether it
+              my work lived inside scripts and state machines. For Beta, I had
+              to sit with each level, play through it myself, and ask whether it
               actually felt like a game worth finishing. That shift in mindset
               shaped everything I shipped this milestone.
             </p>
             <p class="entry-text">
               My biggest programming effort was designing and implementing the
-              Freeze enemy. The concept is straightforward on paper—an enemy that
-              cyclically locks one of your towers while it's alive—but making it
-              feel fair while still creating real tension took several iterations.
-              I wrote <code>FreezeAbility.cs</code> as a coroutine-driven cycle:
-              the enemy picks a target tower, swaps its sprite to a frozen visual,
-              holds it for a configurable duration, then moves on to a fresh
-              target after a brief gap. I also made sure that on enemy death, all
-              frozen towers restore immediately, so the player never gets punished
-              for a kill that came a frame too late. Alongside this, I created the
-              full set of frozen tower sprites for Pencil, SparkTower, and Compass,
-              so the visual state communicates the mechanic without any UI text.
+              Freeze enemy. The concept is straightforward on paper—an enemy
+              that cyclically locks one of your towers while it's alive—but
+              making it feel fair while still creating real tension took several
+              iterations. I wrote <code>FreezeAbility.cs</code> as a
+              coroutine-driven cycle: the enemy picks a target tower, swaps its
+              sprite to a frozen visual, holds it for a configurable duration,
+              then moves on to a fresh target after a brief gap. I also made
+              sure that on enemy death, all frozen towers restore immediately,
+              so the player never gets punished for a kill that came a frame too
+              late. Alongside this, I created the full set of frozen tower
+              sprites for Pencil, SparkTower, and Compass, so the visual state
+              communicates the mechanic without any UI text.
             </p>
             <p class="entry-text">
               Level 1 and Level 2 are now fully built end to end. For Level 1, I
@@ -69,19 +175,19 @@
               the fiction of the world. Level 2 got the Freeze enemy integrated
               into its wave configuration alongside the tuned wave timing from
               Alpha. To give each level its own narrative voice, I wrote
-              <code>LevelNarrativeManager.cs</code>, a lightweight component that
-              lets me configure per-level story beats—level start, wave start,
-              wave end—directly in the Unity Inspector without touching the
-              WaveManager. It made iterating on the narrative flow much faster
-              and keeps the systems cleanly separated.
+              <code>LevelNarrativeManager.cs</code>, a lightweight component
+              that lets me configure per-level story beats—level start, wave
+              start, wave end—directly in the Unity Inspector without touching
+              the WaveManager. It made iterating on the narrative flow much
+              faster and keeps the systems cleanly separated.
             </p>
             <p class="entry-text">
               On the visual side, I reworked the Pencil tower's shoot animation
-              from a simple two-frame flash into a full seven-frame sequence. The
-              new <code>PencilAnimation.cs</code> cycles through all seven sprites
-              at a configurable frame rate and fires the projectile exactly on
-              frame four, so the shot always lands at the visual peak of the
-              wind-up. This was one of those small changes that had a
+              from a simple two-frame flash into a full seven-frame sequence.
+              The new <code>PencilAnimation.cs</code> cycles through all seven
+              sprites at a configurable frame rate and fires the projectile
+              exactly on frame four, so the shot always lands at the visual peak
+              of the wind-up. This was one of those small changes that had a
               disproportionately large impact on how the Pencil feels to watch.
               I also fixed menu UI positioning that had drifted out of alignment
               and patched a handful of bugs across the level scenes and enemy
@@ -96,9 +202,10 @@
               doing its job creating pressure, but players haven't been given
               enough time in Level 1 to internalize the core loop before that
               pressure lands. That learning curve gap is the first thing I want
-              to address going into Golden Code. I also recorded and narrated the
-              beta demo video and wrote the Part 6 update for our Game Design
-              Document, covering the new mechanics and the direction for Level 3.
+              to address going into Golden Code. I also recorded and narrated
+              the beta demo video and wrote the Part 6 update for our Game
+              Design Document, covering the new mechanics and the direction for
+              Level 3.
             </p>
 
             <h3 class="reflection-header">Looking Ahead</h3>
@@ -108,9 +215,9 @@
               2 more gradual, and I'm exploring what a meaningful elite enemy
               type would look like—something with its own FSM logic that rewards
               players who have actually learned the system rather than just
-              surviving it. The Freeze enemy proved that a well-designed mechanic
-              can change how players think about tower placement, and I want Level
-              3 to build on that deliberately.
+              surviving it. The Freeze enemy proved that a well-designed
+              mechanic can change how players think about tower placement, and I
+              want Level 3 to build on that deliberately.
             </p>
           </div>
 
